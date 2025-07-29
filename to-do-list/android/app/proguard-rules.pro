@@ -1,21 +1,30 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+# Common rules for Capacitor/Ionic/Angular in WebView
+-keepclassmembers class * {
+    @org.apache.cordova.CordovaPlugin <init>();
+}
+-keep class * {
+    @com.getcapacitor.JSObject <init>();
+}
+-keep class com.getcapacitor.** { *; }
+-keep class com.ionicframework.cordova.webview.** { *; }
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# General rules for WebView interaction and JavaScript compatibility
+-keepattributes Signature
+-keepattributes SourceFile,LineNumberTable
+-dontwarn android.webkit.**
+-dontwarn org.json.**
+-dontwarn java.nio.channels.spi.SelectorProvider
+-dontwarn sun.misc.Unsafe
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# If your app uses reflection extensively or specific data parsing libraries (like Gson, Jackson)
+# -keep class * implements java.io.Serializable { *; }
+# -keep class * extends java.lang.Exception { *; }
+# -keep class * { <fields>; } # Be careful with this, can prevent shrinking
+# -keepclassmembers class * {
+#    java.lang.Object <init>(org.json.JSONObject);
+# }
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# For Angular-specific aspects often involved with reflection for DI or component loading
+# (These are sometimes needed, depending on Angular version/compiler settings)
+-keep class * implements org.angularjs.compiler.AotGenerated { *; } # Example for AOT, if applicable
+-keep class * extends android.webkit.WebViewClient { *; }
