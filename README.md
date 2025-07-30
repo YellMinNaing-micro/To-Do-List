@@ -15,19 +15,6 @@ The To-Do List app includes the following core functionalities:
 
 - Responsive Design: Built with Ionic, the app offers a consistent user experience across various mobile devices.
 
-## 📱 Screenshots
-
-> You can add your screenshots in the `screenshots` folder and reference them like below:
-
-### 🔐 Login Page
-![Login Page](screenshots/login.png)
-
-### 🧾 Register Page
-![Register Page](screenshots/register.png)
-
-### ✅ To-Do Page
-![To-Do Page](screenshots/todo.png)
-
 ## 🧰 Technologies Used
 
 - [Ionic Framework](https://ionicframework.com/) : For cross-platform mobile app development.
