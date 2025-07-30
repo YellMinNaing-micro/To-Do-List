@@ -2,9 +2,6 @@
 
 Welcome to the To-Do List application, your personal task manager built with Ionic and Angular! This app helps you organize your daily tasks, allowing you to easily add, manage, and track your to-dos.
 
-# Description
-This is my first Ionic project, designed to demonstrate fundamental concepts of mobile app development using the Ionic framework alongside Angular. The application provides a simple yet effective way to manage your tasks, featuring user authentication and a dedicated page for all your to-do items.
-
 ## Features
 
 The To-Do List app includes the following core functionalities:
