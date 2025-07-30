@@ -26,7 +26,7 @@ The To-Do List app includes the following core functionalities:
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/to-do-list.git
+git clone [https://github.com/your-username/to-do-list.git](https://github.com/YellMinNaing-micro/to-do-list.git)
 cd to-do-list
 
 # Install dependencies
